@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.histogram {
+  background-color: black;
+  display: flex;
+  height: 400px ;
+  min-width: 90%;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.bar {
+  background-color: green;
+  width: 100px;
+  margin-left: 15px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
