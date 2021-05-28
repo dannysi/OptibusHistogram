@@ -41,6 +41,20 @@
   background-color: green;
   width: 100px;
   margin-left: 15px;
+  font-size: 1vw;
+  .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .amount {
+    vertical-align: top;
+  }
+  .time {
+    align-items: flex-end;
+  }
 }
 
 @keyframes App-logo-spin {
