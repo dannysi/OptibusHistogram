@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { histogram } from './histogram';
-import { processDriveTimes } from './processor';
+import { Histogram } from './histogram';
 
 function App() {
   
@@ -11,7 +10,7 @@ function App() {
         <p>
           Hello Optibus
         </p>
-        {histogram()}      
+        <Histogram />  
       </header>
     </div>
   );

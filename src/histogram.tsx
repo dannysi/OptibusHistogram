@@ -115,14 +115,23 @@ interface BarProps {
   height: number;
   max: number;
 }
-export const histogram = () => {
-  const jsonArray: Array<any> = JSON.parse(jsonStr)
-  const bars = processDriveTimes(jsonArray)
- return (
-    <div className="histogram">
-      {bars.map(val => (<Bar {...val} />))}
-    </div>
-  )
+
+interface HistogramState {
+  bars: Array<BarProps>
+}
+export class Histogram extends React.Component<{},HistogramState> {
+  state = {bars:[]}
+  componentDidMount () {
+    fetch('http://optibus-interview.herokuapp.com/').then(resp => resp.json().then(jsonArray => this.setState({bars:processDriveTimes(jsonArray)})))
+  }
+  render() {
+    // const bars = processDriveTimes(JSON.parse(jsonStr))
+    return (
+      <div className="histogram">
+        {this.state.bars.map(val => (<Bar {...val} />))}
+      </div>
+    )
+ }
 };
 class Bar extends React.Component<BarProps> {
   static timezoneOffset = new Date().getTimezoneOffset();
@@ -133,7 +142,10 @@ class Bar extends React.Component<BarProps> {
     return <div className="bar" style={{ height: height }}>
       <div className="container"> 
         <div className="amount"> {this.props.height}</div>
-        <div className="time"> {time.getHours()} </div>
+        <div className="time"> 
+          {/* <div className="date">{time.getHours() === 0? time.getDate():<div/>} </div> */}
+          {time.getHours()}   
+        </div>
       </div>
     </div>;
   }
