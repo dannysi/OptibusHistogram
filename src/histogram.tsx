@@ -41,7 +41,8 @@ class Bar extends React.Component<BarProps> {
       <div className="container"> 
         <div className="amount"> {this.props.height}</div>
         <div className="time"> 
-          {time.getHours()}   
+          <div className="date">{time.toLocaleDateString()} </div> 
+          {time.getHours()+":00"}   
         </div>
       </div>
     </div>;
