@@ -38,10 +38,12 @@
 }
 
 .bar {
-  background-color: green;
   width: 70px;
   margin-left: 15px;
   font-size: 1vw;
+  height: 100%;
+  display:flex;
+
   .container {
     display: flex;
     height: 100%;
@@ -51,9 +53,11 @@
   }
   .amount {
     vertical-align: top;
+    background-color: green;
   }
   .time {
     align-items: flex-end;
+    background-color: black;
   }
 }
 

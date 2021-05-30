@@ -34,17 +34,18 @@ export class Histogram extends React.Component<{},HistogramState> {
 class Bar extends React.Component<BarProps> {
   static timezoneOffset = new Date().getTimezoneOffset();
   render() {
-    const height = this.props.height * 100 / this.props.max + "%";
+    const height = (this.props.height * 100 / this.props.max) + "%";
     const time = new Date(0);
     time.setUTCMilliseconds(this.props.time + Bar.timezoneOffset * 60000);
-    return <div className="bar" style={{ height: height }}>
-      <div className="container"> 
-        <div className="amount"> {this.props.height}</div>
+    return <div className="bar" >
+      <div className="container" > 
+        <div className="amount" style={{ height: height }}> {this.props.height}</div>
         <div className="time"> 
           <div className="date">{time.toLocaleDateString()} </div> 
           {time.getHours()+":00"}   
-        </div>
       </div>
+      </div>
+      
     </div>;
   }
 }
