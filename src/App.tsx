@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Hello Optibus
+          Hello Optibus - Rides per hour
         </p>
         <Histogram />  
       </header>

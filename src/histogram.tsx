@@ -34,7 +34,7 @@ export class Histogram extends React.Component<{},HistogramState> {
 class Bar extends React.Component<BarProps> {
   static timezoneOffset = new Date().getTimezoneOffset();
   render() {
-    const height = (this.props.height * 100 / this.props.max) + "%";
+    const height = (this.props.height * 87 / this.props.max) + "%";
     const time = new Date(0);
     time.setUTCMilliseconds(this.props.time + Bar.timezoneOffset * 60000);
     return <div className="bar" >
